@@ -6,6 +6,7 @@
 // @match         http://*.appledaily.com.tw/realtimenews/article/*
 // @match         http://www.appledaily.com.tw/animation/appledaily/*
 // @match         http://www.appledaily.com.tw/column/infographicarticle/*
+// @match         http://ent.appledaily.com.tw/section/article/*
 // @grant         none
 // ==/UserScript==
 
@@ -14,6 +15,9 @@ if ( document.location.href.indexOf('appledaily/article') > -1 ) {
     video_div = document.getElementsByClassName('mediabox')[0];
     flash_script = video_div.getElementsByTagName('script')[0].firstChild;
 } else if ( document.location.href.indexOf('infographicarticle') > -1 ) {
+    video_div = document.getElementsByClassName('mediabox')[0];
+    flash_script = document.getElementById('videobox').getElementsByTagName('script')[2].firstChild;
+} else if ( document.location.href.indexOf('section') > -1 ) {
     video_div = document.getElementsByClassName('mediabox')[0];
     flash_script = document.getElementById('videobox').getElementsByTagName('script')[2].firstChild;
 } else {
